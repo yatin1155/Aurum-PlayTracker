@@ -119,9 +119,9 @@ const Journey = ({ sessionData, timers, setTimers }) => {
                     <ReportItem>Jira Ticket: {sessionData.jiraTicket}</ReportItem>
                     <ReportItem>Desktop URL: {sessionData.desktopURL}</ReportItem>
                     <ReportItem>Mobile URL: {sessionData.mobileURL}</ReportItem>
-                    <ReportItem>Time in Portrait: {(timers.portrait / 1000).toFixed(1)} seconds</ReportItem>
-                    <ReportItem>Time in Landscape: {(timers.landscape / 1000).toFixed(1)} seconds</ReportItem>
-                    <ReportItem>Time on Desktop: {(timers.desktop / 1000).toFixed(1)} seconds</ReportItem>
+                    <ReportItem>Time in Portrait: {formatTime(+(timers.portrait / 1000).toFixed(0))}</ReportItem>
+                    <ReportItem>Time in Landscape: {formatTime(+(timers.landscape / 1000).toFixed(0))}</ReportItem>
+                    <ReportItem>Time on Desktop: {formatTime(+(timers.desktop / 1000).toFixed(0))}</ReportItem>
                     <Button onClick={handlePublish}>Publish</Button>
                 </Report>
             )}
